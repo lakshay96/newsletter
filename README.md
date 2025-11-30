@@ -42,7 +42,7 @@ A robust, automated newsletter service that sends topic-based content to subscri
    - Supports all major SMTP providers
    - Well-documented and maintained
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Node.js (v16 or higher)
 - PostgreSQL (v12 or higher)
@@ -113,7 +113,7 @@ EMAIL_FROM_NAME=Newsletter Service
 TZ=UTC
 ```
 
-#### 📧 Gmail SMTP Setup
+####  Gmail SMTP Setup
 
 1. Enable 2-Factor Authentication on your Google account
 2. Generate an App Password:
@@ -122,7 +122,7 @@ TZ=UTC
    - Copy the generated password
 3. Use this app password in `SMTP_PASS`
 
-#### 📧 Alternative SMTP Providers
+#### Alternative SMTP Providers
 
 - **SendGrid**: smtp.sendgrid.net (Port 587)
 - **Mailgun**: smtp.mailgun.org (Port 587)
@@ -153,7 +153,7 @@ npm start
 
 The server will start on `http://localhost:3000`
 
-## 📚 API Documentation
+##  API Documentation
 
 ### Base URL
 ```
@@ -279,7 +279,7 @@ curl http://localhost:3000/api/content/stats
 }
 ```
 
-## 🔄 How It Works
+##  How It Works
 
 ### Automated Email Sending Flow
 
@@ -427,7 +427,7 @@ npm run prisma:studio
 
 Opens a GUI at `http://localhost:5555` to view/edit database records.
 
-## 📊 Monitoring & Logs
+##  Monitoring & Logs
 
 ### View Logs
 
