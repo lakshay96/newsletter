@@ -1,0 +1,80 @@
+// Prisma Schema for Newsletter Service
+// Database: PostgreSQL
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Topic model - represents newsletter topics
+model Topic {
+  id          String       @id @default(uuid())
+  name        String       @unique
+  description String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  
+  subscribers Subscriber[]
+  contents    Content[]
+  
+  @@map("topics")
+}
+
+// Subscriber model - users who subscribe to topics
+model Subscriber {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  topics    Topic[]
+  sentLogs  SentLog[]
+  
+  @@map("subscribers")
+}
+
+// Content model - newsletter content to be sent
+model Content {
+  id            String    @id @default(uuid())
+  topicId       String
+  title         String
+  body          String    @db.Text
+  scheduledTime DateTime  // When to send this content
+  sent          Boolean   @default(false)
+  sentAt        DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  topic         Topic     @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  sentLogs      SentLog[]
+  
+  @@index([topicId])
+  @@index([scheduledTime])
+  @@index([sent])
+  @@map("contents")
+}
+
+// SentLog model - tracks which content was sent to which subscriber
+model SentLog {
+  id           String   @id @default(uuid())
+  contentId    String
+  subscriberId String
+  sentAt       DateTime @default(now())
+  status       String   // 'success' or 'failed'
+  errorMessage String?
+  
+  content      Content     @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  subscriber   Subscriber  @relation(fields: [subscriberId], references: [id], onDelete: Cascade)
+  
+  @@unique([contentId, subscriberId])
+  @@index([contentId])
+  @@index([subscriberId])
+  @@map("sent_logs")
+}
+
