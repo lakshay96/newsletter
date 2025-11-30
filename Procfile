@@ -1,0 +1,2 @@
+web: npm run prisma:deploy && npm start
+
