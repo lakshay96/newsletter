@@ -40,7 +40,7 @@ app.get('/', (req: Request, res: Response) => {
       content: '/api/content',
       stats: '/api/content/stats',
     },
-    documentation: 'https://github.com/yourusername/newsletter-service',
+    documentation: 'https://github.com/lakshay96/newsletter',
   });
 });
 
