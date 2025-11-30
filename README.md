@@ -1,8 +1,8 @@
-# Newsletter Service 📧
+# Newsletter Service 
 
 A robust, automated newsletter service that sends topic-based content to subscribers at scheduled intervals. Built with Node.js, TypeScript, Express, PostgreSQL, and Prisma.
 
-## 🌟 Features
+## Features
 
 - **Topic Management**: Create and manage multiple newsletter topics
 - **Subscriber Management**: Add subscribers and manage their topic subscriptions
@@ -13,7 +13,7 @@ A robust, automated newsletter service that sends topic-based content to subscri
 - **Type Safety**: Built with TypeScript for robust code
 - **Database**: PostgreSQL with Prisma ORM
 
-## 🏗️ Architecture & Design Decisions
+## Architecture & Design Decisions
 
 ### Tech Stack Rationale
 
@@ -48,7 +48,7 @@ A robust, automated newsletter service that sends topic-based content to subscri
 - PostgreSQL (v12 or higher)
 - SMTP email account (Gmail, SendGrid, etc.)
 
-## 🚀 Local Setup
+## Local Setup
 
 ### 1. Clone the Repository
 
@@ -307,7 +307,7 @@ curl http://localhost:3000/api/content/stats
                   └──────────────┘
 ```
 
-## 🚢 Deployment
+##  Deployment
 
 ### Deploy to Railway (Recommended)
 
@@ -386,7 +386,7 @@ git push heroku main
 heroku run npm run prisma:deploy
 ```
 
-## 🧪 Testing the Service
+##  Testing the Service
 
 ### Using cURL
 
@@ -445,12 +445,12 @@ The scheduler logs every minute:
 ```
 [2024-01-01T10:00:00.000Z] No scheduled content to send
 [2024-01-01T10:01:00.000Z] Found 1 content(s) to send
-📧 Sending "Weekly Update" to 5 subscriber(s)
-✅ Email sent to user@example.com
-✅ Completed sending content: Weekly Update
+ Sending "Weekly Update" to 5 subscriber(s)
+ Email sent to user@example.com
+ Completed sending content: Weekly Update
 ```
 
-## ⚠️ Limitations & Improvements
+##  Limitations & Improvements
 
 ### Current Limitations
 
@@ -556,7 +556,7 @@ The scheduler logs every minute:
    - Custom SMTP per tenant
    - Advanced reporting
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Database Connection Issues
 
@@ -603,7 +603,7 @@ lsof -i :3000
 kill -9 <PID>
 ```
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -611,11 +611,13 @@ kill -9 <PID>
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file for details
 
-## 👨‍💻 Author
+##  Author
+
+@LAKSHAY AGGARWAL
 
 Created as part of a technical assessment to demonstrate:
 - System design skills
@@ -625,13 +627,13 @@ Created as part of a technical assessment to demonstrate:
 - Email integration
 - Documentation abilities
 
-## 📞 Support
+##  Support
 
 For issues or questions:
 - Open an issue on GitHub
 - Email: your-email@example.com
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - [Prisma](https://www.prisma.io/) - Database ORM
 - [Nodemailer](https://nodemailer.com/) - Email sending
